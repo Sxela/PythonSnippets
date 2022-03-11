@@ -1,0 +1,3 @@
+
+# copy with wildcards
+find /some/input/folder/ -name "someFileNameWithWildcards_*.png" -exec cp '{}' /output/folder  \;
