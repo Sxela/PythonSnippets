@@ -25,8 +25,9 @@ ffmpeg -pattern_type glob -i "{frames}" -filter:v fps={fps} "{out_fname}"
 
     vid_name: input video'
     out_dir: output folder. 
+    q:v 2: image quality of in range 1-31, 1 being the highest
 
     You can change the pattern if you need more digits (increase the number in %05d pattern), or change the filename. 
 """
 
-ffmpeg -v quiet -i "{vid_name}" "{out_dir}/frame_%05d.jpg"
+ffmpeg -v quiet -i "{vid_name}" q:v 2 "{out_dir}/frame_%05d.jpg"
