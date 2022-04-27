@@ -30,4 +30,4 @@ ffmpeg -pattern_type glob -i "{frames}" -filter:v fps={fps} "{out_fname}"
     You can change the pattern if you need more digits (increase the number in %05d pattern), or change the filename. 
 """
 
-ffmpeg -v quiet -i "{vid_name}" q:v 2 "{out_dir}/frame_%05d.jpg"
+ffmpeg -v quiet -i "{vid_name}" -q:v 2 "{out_dir}/frame_%05d.jpg"
