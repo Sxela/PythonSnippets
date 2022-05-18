@@ -31,3 +31,8 @@ ffmpeg -pattern_type glob -i "{frames}" -filter:v fps={fps} "{out_fname}"
 """
 
 ffmpeg -v quiet -i "{vid_name}" -q:v 2 "{out_dir}/frame_%05d.jpg"
+    
+""" 
+    Extract every nth frame (2 in this case)
+"""
+ffmpeg -v quiet -i "{vid_name}" -vf "select=not(mod(n\,2))" -vsync vfr -q:v 2 "{out_dir}/frame_%05d.jpg"
